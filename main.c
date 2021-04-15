@@ -23,6 +23,15 @@ unsigned int x;
 unsigned int min_value=0;
 unsigned int i=0;
 
+void msdelay2(unsigned int time)
+{
+	int i,j;
+	for(i=0;i<time;i=i+2)
+	{
+		for(j=0;j<382;j=j+2);
+	}
+}
+
 void main(void)
 {
 	int j=0;
@@ -60,5 +69,6 @@ void main(void)
 	 	 
 		x = adc(0);																					//Read analog value from 0th channel of ADC Ic MCP3008
     array_adc[idx] = x;                                // keep the array updated
+		msdelay2(2);
 	}
 }
